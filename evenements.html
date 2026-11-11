@@ -14,7 +14,7 @@
     <header class="header" id="header">
         <div class="header__inner">
             <a href="index.html" class="header__logo" aria-label="Accueil">
-                <img src="assets/images/logo-edp-texte-seul.png" alt="L'Envol des Pétales" loading="lazy">
+                <img src="assets/images/logo-edp-texte-seul.webp" alt="L'Envol des Pétales" loading="lazy">
             </a>
             <nav class="nav" id="nav" aria-label="Navigation principale">
                 <ul class="nav__list">
@@ -44,10 +44,10 @@
     <!-- HERO -->
     <section class="hero-page">
         <div class="petals-container" aria-hidden="true">
-            <div class="petal petal--rose"></div><div class="petal petal--bordeaux"></div><div class="petal petal--rose"></div>
-            <div class="petal petal--or"></div><div class="petal petal--rose"></div><div class="petal petal--bordeaux"></div>
-            <div class="petal petal--rose"></div><div class="petal petal--or"></div><div class="petal petal--rose"></div>
-            <div class="petal petal--bordeaux"></div>
+            <div class="petal petal--saumon"></div><div class="petal petal--corail"></div><div class="petal petal--saumon"></div>
+            <div class="petal petal--vert"></div><div class="petal petal--saumon"></div><div class="petal petal--corail"></div>
+            <div class="petal petal--saumon"></div><div class="petal petal--vert"></div><div class="petal petal--saumon"></div>
+            <div class="petal petal--corail"></div>
         </div>
         <div class="container">
             <h1 class="hero-page__title">Événements</h1>
@@ -66,7 +66,7 @@
                 <!-- Mariage -->
                 <div class="event-type-card fade-in">
                     <div class="event-type-card__image">
-                        <img src="assets/images/promesse eternelle.png" alt="Bouquet de mariage - Promesse éternelle" loading="lazy">
+                        <img src="assets/images/promesse-eternelle.webp" alt="Bouquet de mariage - Promesse éternelle" loading="lazy">
                     </div>
                     <div class="event-type-card__body">
                         <h3 class="event-type-card__title">Mariages</h3>
@@ -77,7 +77,7 @@
                 <!-- Baptêmes -->
                 <div class="event-type-card fade-in">
                     <div class="event-type-card__image">
-                        <img src="assets/images/souffle de tendresse.png" alt="Bouquet naissance - Souffle de tendresse" loading="lazy">
+                        <img src="assets/images/souffle-de-tendresse.webp" alt="Bouquet naissance - Souffle de tendresse" loading="lazy">
                     </div>
                     <div class="event-type-card__body">
                         <h3 class="event-type-card__title">Baptêmes & Naissances</h3>
@@ -88,7 +88,7 @@
                 <!-- Anniversaires -->
                 <div class="event-type-card fade-in">
                     <div class="event-type-card__image">
-                        <img src="assets/images/eclat-bonheur.png" alt="Bouquet anniversaire - Éclat de bonheur" loading="lazy">
+                        <img src="assets/images/eclat-bonheur.webp" alt="Bouquet anniversaire - Éclat de bonheur" loading="lazy">
                     </div>
                     <div class="event-type-card__body">
                         <h3 class="event-type-card__title">Anniversaires</h3>
@@ -99,7 +99,7 @@
                 <!-- Deuil -->
                 <div class="event-type-card fade-in">
                     <div class="event-type-card__image">
-                        <img src="assets/images/memoire douce.png" alt="Composition de deuil - Mémoire douce" loading="lazy">
+                        <img src="assets/images/memoire-douce.webp" alt="Composition de deuil - Mémoire douce" loading="lazy">
                     </div>
                     <div class="event-type-card__body">
                         <h3 class="event-type-card__title">Deuil</h3>
@@ -110,7 +110,7 @@
                 <!-- Pro -->
                 <div class="event-type-card fade-in">
                     <div class="event-type-card__image">
-                        <img src="assets/images/elegance professionnelle.png" alt="Bouquet professionnel - Élégance professionnelle" loading="lazy">
+                        <img src="assets/images/elegance-professionnelle.webp" alt="Bouquet professionnel - Élégance professionnelle" loading="lazy">
                     </div>
                     <div class="event-type-card__body">
                         <h3 class="event-type-card__title">Pro & Séminaires</h3>
@@ -122,50 +122,142 @@
     </section>
 
     <!-- GALERIE PHOTOS -->
-    <section class="section">
+    <section class="section gallery-section" id="realisations">
+        <img src="assets/images/gravures/brin.svg" alt="" class="gravure gravure--galerie" aria-hidden="true">
         <div class="container">
-            <h2 class="section-title fade-in">Nos réalisations</h2>
-            <p class="section-subtitle fade-in">Quelques créations qui ont fait briller les yeux</p>
-            <span class="decorative-line fade-in"></span>
+            <div class="text-center">
+                <span class="eyebrow fade-in">Portfolio</span>
+                <h2 class="section-title fade-in">Nos <em>réalisations</em></h2>
+                <p class="section-subtitle fade-in">Quelques créations qui ont fait briller les yeux</p>
+            </div>
 
-            <div class="realisations-layout fade-in">
-                <!-- Slideshow à gauche -->
-                <div class="realisations-slideshow">
-                    <div class="slideshow-track">
-                        <img src="assets/images/table mariage.JPG" alt="Cliquez sur une photo pour l'agrandir" class="slideshow-display">
-                    </div>
-                    <div class="slideshow-controls">
-                        <button class="slideshow-btn slideshow-btn--prev" aria-label="Photo précédente">&#8249;</button>
-                        <button class="slideshow-btn slideshow-btn--next" aria-label="Photo suivante">&#8250;</button>
-                    </div>
-                </div>
+            <div class="filters gallery__filters fade-in" role="group" aria-label="Filtrer les réalisations par occasion">
+                <button type="button" class="filter-btn active" data-filtre="tout" aria-pressed="true">Tout</button>
+                <button type="button" class="filter-btn" data-filtre="mariages" aria-pressed="false">Mariages</button>
+                <button type="button" class="filter-btn" data-filtre="ceremonies" aria-pressed="false">Cérémonies &amp; fêtes</button>
+                <button type="button" class="filter-btn" data-filtre="bouquets" aria-pressed="false">Bouquets</button>
+                <button type="button" class="filter-btn" data-filtre="shootings" aria-pressed="false">Shootings</button>
+            </div>
 
-                <!-- Mosaïque à droite -->
-                <div class="realisations-mosaic">
-                    <div class="mosaic-item active"><img src="assets/images/table mariage.JPG" alt="Décoration de table mariage" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/arche-evenement.JPG" alt="Arche florale événement" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/deco-voiture-mariage.JPG" alt="Décoration voiture mariage" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/mariage-boheme.JPG" alt="Mariage bohème" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/mariage-boheme2.JPG" alt="Mariage bohème détails" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/bouquet2.jpg" alt="Bouquet de fleurs" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/bar-mitzvah.JPG" alt="Décoration florale bar-mitzvah" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/preparation vases.JPG" alt="Préparation des vases" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/ambiance-bouquet-fleurs-roses.png" alt="Bouquet de fleurs roses" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/compo pour mairie.JPG" alt="Composition pour mairie" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/shooting-exotique.JPG" alt="Shooting exotique" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/bouquet4.JPG" alt="Bouquet coloré" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/bouquet5.JPG" alt="Bouquet élégant" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/bouquet1.jpg" alt="Bouquet classique" loading="lazy"></div>
-                    <div class="mosaic-item"><img src="assets/images/joli-visuel-lys-dans-un-vase.jpg" alt="Lys dans un vase" loading="lazy"></div>
-                </div>
+            <div class="gallery fade-in">
+                <figure class="gallery__item gallery__item--big" data-categorie="mariages">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Arche fleurie de cérémonie">
+                        <img src="assets/images/arche-evenement.webp" alt="Arche fleurie de cérémonie" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Mariage</span>Arche fleurie de cérémonie</figcaption>
+                </figure>
+                <figure class="gallery__item" data-categorie="ceremonies">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Petits vases champêtres pour une réception">
+                        <img src="assets/images/preparation-vases.webp" alt="Petits vases champêtres pour une réception" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Réception</span>Petits vases champêtres pour une réception</figcaption>
+                </figure>
+                <figure class="gallery__item gallery__item--big" data-categorie="ceremonies">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Allée fleurie de bar-mitzvah">
+                        <img src="assets/images/bar-mitzvah.webp" alt="Allée fleurie de bar-mitzvah" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Cérémonie</span>Allée fleurie de bar-mitzvah</figcaption>
+                </figure>
+                <figure class="gallery__item gallery__item--tall" data-categorie="bouquets">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Bouquet champêtre de saison">
+                        <img src="assets/images/bouquet1.webp" alt="Bouquet champêtre de saison" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Bouquet</span>Bouquet champêtre de saison</figcaption>
+                </figure>
+                <figure class="gallery__item gallery__item--tall" data-categorie="shootings">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Décor floral pour un shooting exotique">
+                        <img src="assets/images/shooting-exotique.webp" alt="Décor floral pour un shooting exotique" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Shooting</span>Décor floral pour un shooting exotique</figcaption>
+                </figure>
+                <figure class="gallery__item gallery__item--tall" data-categorie="mariages">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Arche bohème, pampas et voilages">
+                        <img src="assets/images/mariage-boheme2.webp" alt="Arche bohème, pampas et voilages" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Mariage</span>Arche bohème, pampas et voilages</figcaption>
+                </figure>
+                <figure class="gallery__item gallery__item--tall" data-categorie="mariages">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Cérémonie bohème en plein air">
+                        <img src="assets/images/mariage-boheme.webp" alt="Cérémonie bohème en plein air" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Mariage</span>Cérémonie bohème en plein air</figcaption>
+                </figure>
+                <figure class="gallery__item gallery__item--tall" data-categorie="mariages">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Voiture des mariés">
+                        <img src="assets/images/deco-voiture-mariage.webp" alt="Voiture des mariés" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Mariage</span>Voiture des mariés</figcaption>
+                </figure>
+                <figure class="gallery__item gallery__item--tall" data-categorie="mariages">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Chemin de table champêtre">
+                        <img src="assets/images/table-mariage.webp" alt="Chemin de table champêtre" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Mariage</span>Chemin de table champêtre</figcaption>
+                </figure>
+                <figure class="gallery__item gallery__item--tall" data-categorie="bouquets">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Bouquet solaire aux gerberas">
+                        <img src="assets/images/bouquet4.webp" alt="Bouquet solaire aux gerberas" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Bouquet</span>Bouquet solaire aux gerberas</figcaption>
+                </figure>
+                <figure class="gallery__item gallery__item--tall" data-categorie="bouquets">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Roses rouges et gypsophile">
+                        <img src="assets/images/bouquet5.webp" alt="Roses rouges et gypsophile" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Bouquet</span>Roses rouges et gypsophile</figcaption>
+                </figure>
+                <figure class="gallery__item" data-categorie="bouquets">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Bouquet des prés">
+                        <img src="assets/images/bouquet-de-pres.webp" alt="Bouquet des prés" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Bouquet</span>Bouquet des prés</figcaption>
+                </figure>
+                <figure class="gallery__item gallery__item--tall" data-categorie="bouquets">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Lys blancs en vase">
+                        <img src="assets/images/joli-visuel-lys-dans-un-vase.webp" alt="Lys blancs en vase" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Bouquet</span>Lys blancs en vase</figcaption>
+                </figure>
+                <figure class="gallery__item gallery__item--tall" data-categorie="bouquets">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Bouquet aux pivoines">
+                        <img src="assets/images/bouquet2.webp" alt="Bouquet aux pivoines" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Bouquet</span>Bouquet aux pivoines</figcaption>
+                </figure>
+                <figure class="gallery__item" data-categorie="mariages">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Miroir fleuri pour l’accueil des invités">
+                        <img src="assets/images/mariage-miroir.webp" alt="Miroir fleuri pour l’accueil des invités" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Mariage</span>Miroir fleuri pour l’accueil des invités</figcaption>
+                </figure>
+                <figure class="gallery__item" data-categorie="ceremonies">
+                    <button type="button" class="gallery__open" aria-label="Agrandir : Coussins tricolores pour une commémoration">
+                        <img src="assets/images/compo-pour-mairie.webp" alt="Coussins tricolores pour une commémoration" loading="lazy">
+                    </button>
+                    <figcaption><span class="gallery__tag">Cérémonie</span>Coussins tricolores pour une commémoration</figcaption>
+                </figure>
             </div>
         </div>
     </section>
 
+    <!-- Visionneuse plein écran -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionneuse photo" hidden>
+        <button type="button" class="lightbox__close" aria-label="Fermer">&times;</button>
+        <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Photo précédente">&#8249;</button>
+        <figure class="lightbox__figure">
+            <img class="lightbox__img" src="" alt="">
+            <figcaption class="lightbox__caption">
+                <span class="lightbox__title"></span>
+                <span class="lightbox__count"></span>
+            </figcaption>
+        </figure>
+        <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Photo suivante">&#8250;</button>
+    </div>
+
     <!-- PROMESSE -->
     <section class="engagement-section fade-in">
         <div class="engagement-photo">
-            <img src="assets/images/sandrine-mariage-escabeau.jpg" alt="Sandrine en pleine installation florale pour un mariage" loading="lazy">
+            <img src="assets/images/sandrine-mariage-escabeau.webp" alt="Sandrine en pleine installation florale pour un mariage" loading="lazy">
         </div>
         <div class="engagement-card">
             <span class="engagement-guillemet">"</span>
@@ -256,7 +348,7 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
-                    <img src="assets/images/logo-EDP-2025_RVB_logo-EDP-paysage-blanc.png" alt="L'Envol des Pétales">
+                    <img src="assets/images/logo-edp-paysage-blanc.webp" alt="L'Envol des Pétales">
                     <p>Des fleurs pour chaque émotion. Fleuriste en Seine-et-Marne.</p>
                     <div class="social-links mt-1">
                         <a href="https://www.facebook.com/LENVOLDESPETALES" class="social-link" aria-label="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>

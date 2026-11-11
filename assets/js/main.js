@@ -149,39 +149,98 @@
         });
     });
 
-    /* --- SLIDESHOW RÉALISATIONS --- */
-    var slideshow = document.querySelector('.realisations-slideshow');
-    if (slideshow) {
-        var displayImg = slideshow.querySelector('.slideshow-display');
-        var mosaicItems = document.querySelectorAll('.mosaic-item');
-        var prevBtn = slideshow.querySelector('.slideshow-btn--prev');
-        var nextBtn = slideshow.querySelector('.slideshow-btn--next');
-        var currentIndex = 0;
+    /* --- GALERIE RÉALISATIONS : filtres + visionneuse --- */
+    var gallery = document.querySelector('.gallery');
+    if (gallery) {
+        var galleryItems = Array.prototype.slice.call(gallery.querySelectorAll('.gallery__item'));
+        var galleryFilters = document.querySelectorAll('.gallery__filters .filter-btn');
 
-        function showImage(index) {
-            currentIndex = (index + mosaicItems.length) % mosaicItems.length;
-            var img = mosaicItems[currentIndex].querySelector('img');
-
-            // Fade out
-            displayImg.classList.add('fading');
-            setTimeout(function() {
-                displayImg.src = img.src;
-                displayImg.alt = img.alt;
-                displayImg.classList.remove('fading');
-            }, 300);
-
-            // Update active state on mosaic
-            mosaicItems.forEach(function(item) { item.classList.remove('active'); });
-            mosaicItems[currentIndex].classList.add('active');
-        }
-
-        // Clic sur une image de la mosaïque
-        mosaicItems.forEach(function(item, i) {
-            item.addEventListener('click', function() { showImage(i); });
+        // Filtres par occasion
+        galleryFilters.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var filtre = btn.dataset.filtre;
+                galleryFilters.forEach(function(b) {
+                    var actif = b === btn;
+                    b.classList.toggle('active', actif);
+                    b.setAttribute('aria-pressed', actif ? 'true' : 'false');
+                });
+                galleryItems.forEach(function(item) {
+                    item.hidden = filtre !== 'tout' && item.dataset.categorie !== filtre;
+                });
+            });
         });
 
-        prevBtn.addEventListener('click', function() { showImage(currentIndex - 1); });
-        nextBtn.addEventListener('click', function() { showImage(currentIndex + 1); });
+        // Visionneuse plein écran
+        var lightbox = document.getElementById('lightbox');
+        var lbImg = lightbox.querySelector('.lightbox__img');
+        var lbTitle = lightbox.querySelector('.lightbox__title');
+        var lbCount = lightbox.querySelector('.lightbox__count');
+        var lbClose = lightbox.querySelector('.lightbox__close');
+        var lbList = [];
+        var lbIndex = 0;
+        var lbOpener = null;
+
+        function lbShow(index) {
+            lbIndex = (index + lbList.length) % lbList.length;
+            var img = lbList[lbIndex].querySelector('img');
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            lbTitle.textContent = img.alt;
+            lbCount.textContent = (lbIndex + 1) + ' / ' + lbList.length;
+        }
+
+        function lbOpen(item) {
+            // On ne fait défiler que les photos visibles avec le filtre actif
+            lbList = galleryItems.filter(function(i) { return !i.hidden; });
+            lbOpener = document.activeElement;
+            lightbox.hidden = false;
+            document.body.style.overflow = 'hidden';
+            lbShow(lbList.indexOf(item));
+            lbClose.focus();
+        }
+
+        function lbCloseFn() {
+            lightbox.hidden = true;
+            document.body.style.overflow = '';
+            if (lbOpener) lbOpener.focus();
+        }
+
+        galleryItems.forEach(function(item) {
+            item.querySelector('.gallery__open').addEventListener('click', function() { lbOpen(item); });
+        });
+
+        lbClose.addEventListener('click', lbCloseFn);
+        lightbox.querySelector('.lightbox__nav--prev').addEventListener('click', function() { lbShow(lbIndex - 1); });
+        lightbox.querySelector('.lightbox__nav--next').addEventListener('click', function() { lbShow(lbIndex + 1); });
+
+        // Clic sur le fond sombre pour fermer
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) lbCloseFn();
+        });
+
+        // Clavier : Échap, flèches, et focus gardé dans la visionneuse
+        document.addEventListener('keydown', function(e) {
+            if (lightbox.hidden) return;
+            if (e.key === 'Escape') lbCloseFn();
+            else if (e.key === 'ArrowLeft') lbShow(lbIndex - 1);
+            else if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
+            else if (e.key === 'Tab') {
+                var focusables = lightbox.querySelectorAll('button');
+                var first = focusables[0], last = focusables[focusables.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
+        });
+
+        // Glisser du doigt sur mobile
+        var touchX = null;
+        lightbox.addEventListener('touchstart', function(e) { touchX = e.touches[0].clientX; }, { passive: true });
+        lightbox.addEventListener('touchend', function(e) {
+            if (touchX === null) return;
+            var dx = e.changedTouches[0].clientX - touchX;
+            if (Math.abs(dx) > 50) lbShow(lbIndex + (dx < 0 ? 1 : -1));
+            touchX = null;
+        });
     }
 
     /* --- LAZY LOADING DES IMAGES --- */
