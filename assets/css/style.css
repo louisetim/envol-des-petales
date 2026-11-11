@@ -2952,6 +2952,13 @@ h2 + p {
 
     .event-types {
         grid-template-columns: 1fr;
+        justify-items: stretch;
+    }
+
+    /* Sur une seule colonne, la dernière carte prend toute la largeur */
+    .event-types .event-type-card:last-child {
+        max-width: none;
+        justify-self: stretch;
     }
 
     .gallery {
