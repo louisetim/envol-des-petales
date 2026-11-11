@@ -25,13 +25,18 @@
                     <li><a href="a-propos.html" class="nav__link">À propos</a></li>
                     <li><a href="contact.html" class="nav__link">Contact</a></li>
                 </ul>
+                <!-- Uniquement dans le menu mobile -->
+                <div class="nav__mobile">
+                    <a href="contact.html" class="btn btn--primary">Commander</a>
+                    <p class="nav__contact"><a href="tel:+33659080283">06 59 08 02 83</a><a href="mailto:contact@lenvoldespetales.fr">contact@lenvoldespetales.fr</a></p>
+                </div>
             </nav>
             <div class="nav__cta">
                 <button class="cart-btn" id="cart-btn" aria-label="Voir le panier" title="Voir le panier">
                     <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
                     <span class="cart-count empty" id="cart-count">0</span>
                 </button>
-                <a href="contact.html" class="btn btn--primary btn--small">Commander</a>
+                <a href="contact.html" class="btn btn--primary btn--small header__cta">Commander</a>
                 <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
                     <span class="burger__line"></span>
                     <span class="burger__line"></span>

@@ -323,6 +323,11 @@ h2 + p {
     width: 100%;
 }
 
+/* Bloc « Commander + contact » visible seulement dans le menu mobile */
+.nav__mobile {
+    display: none;
+}
+
 /* Bouton Commander dans le header */
 .nav__cta {
     display: flex;
@@ -2671,42 +2676,121 @@ h2 + p {
         --section-padding: 50px;
     }
 
-    /* Navigation mobile */
+    /* Navigation mobile : panneau plein écran sous le header */
+    .header__cta {
+        display: none;
+    }
+
     .nav {
         position: fixed;
         top: var(--header-height);
         left: 0;
         width: 100%;
+        height: calc(100dvh - var(--header-height));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 24px 24px calc(24px + env(safe-area-inset-bottom));
         background: var(--creme);
-        padding: 20px;
-        transform: translateY(-100%);
+        overflow-y: auto;
         opacity: 0;
-        pointer-events: none;
-        transition: var(--transition);
-        box-shadow: 0 10px 20px rgba(70, 38, 30, 0.1);
+        visibility: hidden;
+        transform: translateY(-12px);
+        transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), visibility 0s linear 0.35s;
         z-index: 999;
     }
 
+    /* Gravure discrète en fond du menu */
+    .nav::before {
+        content: '';
+        position: absolute;
+        right: -30px;
+        bottom: 110px;
+        width: 170px;
+        height: 300px;
+        background: url("../images/gravures/fleur1.webp") no-repeat center bottom / contain;
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+    .nav > * {
+        position: relative;
+    }
+
     .nav.open {
-        transform: translateY(0);
         opacity: 1;
-        pointer-events: all;
+        visibility: visible;
+        transform: none;
+        transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
     }
 
     .nav__list {
         flex-direction: column;
+        align-items: flex-start;
         gap: 0;
     }
 
+    .nav__list li {
+        width: 100%;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+    }
+
+    .nav.open .nav__list li {
+        opacity: 1;
+        transform: none;
+    }
+
+    .nav.open .nav__list li:nth-child(2) { transition-delay: 0.04s; }
+    .nav.open .nav__list li:nth-child(3) { transition-delay: 0.08s; }
+    .nav.open .nav__list li:nth-child(4) { transition-delay: 0.12s; }
+    .nav.open .nav__list li:nth-child(5) { transition-delay: 0.16s; }
+    .nav.open .nav__list li:nth-child(6) { transition-delay: 0.20s; }
+
     .nav__link {
         display: block;
-        padding: 12px 0;
-        font-size: 1.1rem;
-        border-bottom: 1px solid var(--beige);
+        padding: 6px 0;
+        font-family: var(--font-titre);
+        font-size: 1.75rem;
+        font-weight: 400;
+        color: var(--bordeaux);
+    }
+
+    .nav__link.active {
+        color: var(--corail);
+        font-style: italic;
     }
 
     .nav__link::after {
         display: none;
+    }
+
+    .nav__mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding-top: 24px;
+    }
+
+    .nav__mobile .btn {
+        width: 100%;
+    }
+
+    .nav__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    .nav__contact a {
+        color: var(--olive);
+    }
+
+    body.menu-ouvert {
+        overflow: hidden;
     }
 
     .burger {

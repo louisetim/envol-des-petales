@@ -11,20 +11,31 @@
     var nav = document.getElementById('nav');
 
     if (burger && nav) {
+        function setMenu(open) {
+            nav.classList.toggle('open', open);
+            burger.classList.toggle('active', open);
+            burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+            document.body.classList.toggle('menu-ouvert', open);
+        }
+
         burger.addEventListener('click', function() {
-            var isOpen = nav.classList.toggle('open');
-            burger.classList.toggle('active');
-            burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            setMenu(!nav.classList.contains('open'));
         });
 
-        // Fermer le menu au clic sur un lien
-        var navLinks = nav.querySelectorAll('.nav__link');
-        navLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                nav.classList.remove('open');
-                burger.classList.remove('active');
-                burger.setAttribute('aria-expanded', 'false');
-            });
+        // Fermer le menu au clic sur un lien ou avec Échap
+        nav.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() { setMenu(false); });
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && nav.classList.contains('open')) {
+                setMenu(false);
+                burger.focus();
+            }
+        });
+        // Repasser en grand écran referme le menu
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && nav.classList.contains('open')) setMenu(false);
         });
     }
 
