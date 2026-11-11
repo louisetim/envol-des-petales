@@ -1129,23 +1129,23 @@ h2 + p {
 }
 
 .gravure--galerie {
-    top: 40px;
-    right: -60px;
-    width: 300px;
+    top: 70px;
+    right: 4%;
+    width: 260px;
     opacity: 0.45;
     transform: rotate(-12deg);
 }
 
 /* Gravures de part et d'autre de la citation */
 .gravure--citation-g {
-    left: 2%;
+    left: calc(2% + 20px);
     bottom: 30px;
     width: 190px;
     transform: rotate(-10deg);
 }
 
 .gravure--citation-d {
-    right: 1%;
+    right: calc(1% + 20px);
     top: 50px;
     width: 180px;
     transform: rotate(8deg);
@@ -2048,10 +2048,13 @@ h2 + p {
 
 .delivery-zone {
     position: relative;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    max-width: 980px;
+    margin: 110px auto 0;
     background: var(--blanc);
     border-radius: var(--radius-lg);
-    padding: 40px;
-    margin-top: 110px !important;
+    overflow: visible;
     box-shadow: 0 8px 30px rgba(70, 38, 30, 0.05);
 }
 
@@ -2129,24 +2132,82 @@ h2 + p {
 
 /* Zone de livraison - card */
 
-.delivery-zone h3 {
+.delivery-zone__info {
+    background: var(--olive);
+    color: var(--creme);
+    padding: 44px 40px;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.delivery-zone__info h3 {
+    font-family: var(--font-titre);
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: var(--creme);
     margin-bottom: 1rem;
 }
 
-.communes-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+.delivery-zone__info p {
+    color: rgba(244, 234, 226, 0.88);
+    font-size: 0.98rem;
 }
 
-.commune-tag {
-    display: inline-block;
-    padding: 6px 14px;
-    background: var(--beige);
-    color: var(--accent);
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 500;
+.delivery-zone__info strong {
+    color: var(--saumon);
+    font-weight: 600;
+}
+
+.delivery-zone__note {
+    font-size: 0.88rem !important;
+    padding-top: 1rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(244, 234, 226, 0.25);
+}
+
+.delivery-zone__info .btn--secondary {
+    color: var(--creme);
+    margin-top: 0.5rem;
+}
+
+.delivery-zone__info .btn--secondary:hover {
+    background: var(--creme);
+    border-color: var(--creme);
+    color: var(--olive);
+}
+
+.communes-list {
+    list-style: none;
+    padding: 44px 48px;
+    columns: 2;
+    column-gap: 40px;
+    align-self: center;
+}
+
+.communes-list li {
+    position: relative;
+    break-inside: avoid;
+    padding: 9px 0 9px 20px;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--gris-doux);
+    font-size: 0.92rem;
+    color: var(--gris-texte);
+}
+
+.communes-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    margin-top: -3.5px;
+    border-radius: 50% 0;
+    background: var(--corail);
+    transform: rotate(-45deg);
+}
+
+#form-contact {
+    scroll-margin-top: calc(var(--header-height) + 30px);
 }
 
 /* Reseaux sociaux */
@@ -2582,6 +2643,14 @@ h2 + p {
         gap: 40px;
     }
 
+    .delivery-zone {
+        grid-template-columns: 1fr;
+    }
+
+    .delivery-zone__info {
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
     .devis__card {
         padding: 28px 22px;
     }
@@ -2759,6 +2828,21 @@ h2 + p {
     .gravure--citation-d {
         width: 100px;
         opacity: 0.25;
+    }
+
+    .delivery-zone__info,
+    .communes-list {
+        padding: 32px 24px;
+    }
+
+    .communes-list {
+        columns: 2;
+        column-gap: 20px;
+    }
+
+    .communes-list li {
+        white-space: normal;
+        font-size: 0.85rem;
     }
 
     .quote__mark {
