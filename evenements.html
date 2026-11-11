@@ -273,69 +273,77 @@
     </section>
 
     <!-- FORMULAIRE DEVIS -->
-    <section class="section" id="devis">
-        <div class="container">
-            <h2 class="section-title fade-in">Demander un devis gratuit</h2>
-            <p class="section-subtitle fade-in">Décrivez votre événement, Sandrine reviendra vers vous sous 48h</p>
-            <span class="decorative-line fade-in"></span>
+    <section class="section section--alt devis" id="devis">
+        <div class="container devis__grid">
+            <aside class="devis__intro fade-in">
+                <span class="eyebrow">Devis gratuit</span>
+                <h2>Parlons de votre <em>événement</em></h2>
+                <p>Racontez à Sandrine ce que vous imaginez : elle vous répond sous 48&nbsp;h avec des idées et un devis sur mesure.</p>
+                <ol class="devis__etapes">
+                    <li><span>1</span><div><strong>Vous décrivez votre projet</strong>Date, lieu, ambiance, budget… même approximatifs.</div></li>
+                    <li><span>2</span><div><strong>Sandrine vous rappelle</strong>Pour affiner vos envies et vous conseiller sur les fleurs de saison.</div></li>
+                    <li><span>3</span><div><strong>Vous recevez votre devis</strong>Détaillé, sans engagement.</div></li>
+                </ol>
+                <p class="devis__direct">Plutôt par téléphone ? <a href="tel:+33659080283">06 59 08 02 83</a></p>
+            </aside>
 
-            <div class="form-section fade-in">
+            <div class="devis__card fade-in">
                 <form id="form-devis" novalidate>
+                    <fieldset class="form-group">
+                        <legend>Quel type d'événement ? *</legend>
+                        <div class="chips">
+                                <label class="chip"><input type="radio" name="type" value="mariage" required><span>Mariage</span></label>
+                                <label class="chip"><input type="radio" name="type" value="bapteme"><span>Baptême / Naissance</span></label>
+                                <label class="chip"><input type="radio" name="type" value="deuil"><span>Deuil</span></label>
+                                <label class="chip"><input type="radio" name="type" value="evjf"><span>EVJF / Anniversaire</span></label>
+                                <label class="chip"><input type="radio" name="type" value="entreprise"><span>Professionnel</span></label>
+                                <label class="chip"><input type="radio" name="type" value="autre"><span>Autre</span></label>
+                        </div>
+                        <p class="form-error" id="error-type">Merci de choisir un type d'événement</p>
+                    </fieldset>
+
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="devis-nom">Votre nom *</label>
-                            <input type="text" id="devis-nom" name="nom" required placeholder="Marie Dupont">
+                            <input type="text" id="devis-nom" name="nom" required placeholder="Marie Dupont" autocomplete="name">
                             <p class="form-error" id="error-nom">Merci de renseigner votre nom</p>
                         </div>
                         <div class="form-group">
                             <label for="devis-email">Votre email *</label>
-                            <input type="email" id="devis-email" name="email" required placeholder="marie@exemple.fr">
+                            <input type="email" id="devis-email" name="email" required placeholder="marie@exemple.fr" autocomplete="email">
                             <p class="form-error" id="error-email">Merci de renseigner un email valide</p>
                         </div>
                         <div class="form-group">
                             <label for="devis-tel">Téléphone</label>
-                            <input type="tel" id="devis-tel" name="tel" placeholder="06 12 34 56 78">
+                            <input type="tel" id="devis-tel" name="tel" placeholder="06 12 34 56 78" autocomplete="tel">
                         </div>
                         <div class="form-group">
-                            <label for="devis-type">Type d'événement *</label>
-                            <select id="devis-type" name="type" required>
-                                <option value="">-- Choisissez --</option>
-                                <option value="mariage">Mariage</option>
-                                <option value="bapteme">Baptême / Naissance</option>
-                                <option value="anniversaire">Anniversaire</option>
-                                <option value="deuil">Deuil</option>
-                                <option value="entreprise">Événement professionnel</option>
-                                <option value="autre">Autre</option>
-                            </select>
-                            <p class="form-error" id="error-type">Merci de choisir un type d'événement</p>
-                        </div>
-                        <div class="form-group">
-                            <label for="devis-date">Date souhaitée</label>
+                            <label for="devis-date">Date de l'événement</label>
                             <input type="date" id="devis-date" name="date">
                         </div>
-                        <div class="form-group">
-                            <label for="devis-budget">Budget estimatif</label>
-                            <select id="devis-budget" name="budget">
-                                <option value="">-- Indiquez votre budget --</option>
-                                <option value="moins-200">Moins de 200 &euro;</option>
-                                <option value="200-500">200 &euro; - 500 &euro;</option>
-                                <option value="500-1000">500 &euro; - 1 000 &euro;</option>
-                                <option value="plus-1000">Plus de 1 000 &euro;</option>
-                                <option value="ne-sait-pas">Je ne sais pas encore</option>
-                            </select>
-                        </div>
-                        <div class="form-group form-group--full">
-                            <label for="devis-message">Décrivez votre projet *</label>
-                            <textarea id="devis-message" name="message" required placeholder="Décrivez votre événement, le lieu, le nombre d'invités, vos envies en termes de couleurs et de fleurs..."></textarea>
-                            <p class="form-error" id="error-message">Merci de décrire votre projet</p>
-                        </div>
                     </div>
-                    <div style="text-align:center;margin-top:1rem;">
-                        <button type="submit" class="btn btn--primary">Envoyer ma demande de devis</button>
+
+                    <fieldset class="form-group">
+                        <legend>Votre budget</legend>
+                        <div class="chips chips--small">
+                                <label class="chip"><input type="radio" name="budget" value="moins-200"><span>− de 200 €</span></label>
+                                <label class="chip"><input type="radio" name="budget" value="200-500"><span>200 – 500 €</span></label>
+                                <label class="chip"><input type="radio" name="budget" value="500-1000"><span>500 – 1 000 €</span></label>
+                                <label class="chip"><input type="radio" name="budget" value="plus-1000"><span>+ de 1 000 €</span></label>
+                                <label class="chip"><input type="radio" name="budget" value="ne-sait-pas"><span>Je ne sais pas encore</span></label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="devis-message">Décrivez votre projet *</label>
+                        <textarea id="devis-message" name="message" required placeholder="Le lieu, le nombre d'invités, vos couleurs préférées, les fleurs que vous aimez…"></textarea>
+                        <p class="form-error" id="error-message">Merci de décrire votre projet</p>
                     </div>
+
+                    <button type="submit" class="btn btn--primary devis__submit">Envoyer ma demande</button>
                 </form>
 
-                <div class="form-success" id="form-success-devis">
+                <div class="form-success" id="form-success-devis" role="status">
                     <h3>Merci pour votre demande !</h3>
                     <p>Sandrine a bien reçu votre demande de devis et reviendra vers vous dans les 48 heures. À très bientôt !</p>
                 </div>

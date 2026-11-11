@@ -5,9 +5,8 @@
 
 /* --- Google Fonts ---
    Fraunces : titres (serif moderne, douce et artisanale)
-   Cinzel Decorative : petits accents, en écho au logo
    Funnel Sans : texte courant */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 /* --- Variables de couleurs et typographie ---
    Modifiez ici pour changer les couleurs du site */
@@ -35,7 +34,6 @@
 
     /* Typographie */
     --font-titre: 'Fraunces', Georgia, serif;
-    --font-logo: 'Cinzel Decorative', Georgia, serif;
     --font-corps: 'Funnel Sans', 'Segoe UI', sans-serif;
 
     /* Formes */
@@ -133,13 +131,13 @@ h3 {
     font-size: clamp(1.15rem, 2.2vw, 1.4rem);
 }
 
-/* Petit sur-titre en Cinzel, en écho au logo */
+/* Petit sur-titre */
 .eyebrow {
     display: inline-block;
-    font-family: var(--font-logo);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
+    font-family: var(--font-corps);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--olive);
     margin-bottom: 1rem;
@@ -413,10 +411,7 @@ p {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background:
-        radial-gradient(ellipse 60% 70% at 85% 40%, rgba(244, 175, 168, 0.45), transparent 70%),
-        radial-gradient(ellipse 50% 50% at 10% 90%, rgba(182, 181, 82, 0.18), transparent 70%),
-        var(--creme);
+    background: var(--creme);
     overflow: hidden;
     padding: calc(var(--header-height) + 40px) 0 60px;
 }
@@ -477,67 +472,18 @@ p {
     background: var(--corail);
 }
 
-/* Visuel : photo en arche + médaillon + gravure + ballerine */
+/* Visuel : une photo de Sandrine, simple */
 .hero__visual {
     position: relative;
-    justify-self: center;
-    width: min(100%, 440px);
+    justify-self: end;
+    width: min(100%, 460px);
 }
 
-.hero__arch {
-    position: relative;
+.hero__photo {
+    width: 100%;
     aspect-ratio: 4 / 5;
-    border-radius: 999px 999px var(--radius-lg) var(--radius-lg);
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(70, 38, 30, 0.15);
-}
-
-.hero__arch img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-}
-
-.hero__badge {
-    position: absolute;
-    left: -60px;
-    bottom: 40px;
-    width: 150px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 6px solid var(--creme);
-    box-shadow: var(--ombre-hover);
-}
-
-.hero__badge img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero__gravure {
-    position: absolute;
-    right: -70px;
-    top: -30px;
-    width: 190px;
-    opacity: 0.55;
-    transform: rotate(14deg);
-    z-index: -1;
-}
-
-.hero__ballerine {
-    position: absolute;
-    right: -30px;
-    bottom: -20px;
-    width: 90px;
-    filter: drop-shadow(0 6px 10px rgba(70, 38, 30, 0.15));
-    animation: ballerineFlotte 6s ease-in-out infinite;
-}
-
-@keyframes ballerineFlotte {
-    0%, 100% { transform: translateY(0) rotate(-2deg); }
-    50% { transform: translateY(-12px) rotate(2deg); }
+    border-radius: var(--radius-lg);
 }
 
 /* Gravures décoratives réutilisables */
@@ -613,9 +559,7 @@ p {
     position: relative;
     padding: 180px 0 100px;
     text-align: center;
-    background:
-        radial-gradient(ellipse 50% 80% at 50% 0%, rgba(244, 175, 168, 0.4), transparent 70%),
-        var(--creme);
+    background: var(--creme);
     overflow: hidden;
 }
 
@@ -1245,10 +1189,10 @@ p {
 
 .gallery__tag {
     display: block;
-    font-family: var(--font-logo);
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
+    font-family: var(--font-corps);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--saumon);
     margin-bottom: 4px;
@@ -1594,46 +1538,143 @@ p {
     color: var(--gris-texte);
 }
 
-/* Citation */
-.quote-block {
-    text-align: center;
-    padding: 50px 50px;
-    background: var(--blanc);
+/* Ce qui rend L'Envol des Pétales unique */
+.unique__grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 90px;
+    align-items: start;
+}
+
+.unique__intro {
+    position: sticky;
+    top: calc(var(--header-height) + 40px);
+}
+
+.unique__intro h2 {
+    margin-bottom: 2.5rem;
+}
+
+.unique__photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
     border-radius: var(--radius-lg);
-    max-width: 750px;
-    margin: 0 auto;
-    position: relative;
-    border: 1px solid rgba(244, 175, 168, 0.15);
-    border-left: 3px solid var(--vert-clair);
-    border-right: 3px solid var(--vert-clair);
-    box-shadow: 0 4px 20px rgba(70, 38, 30, 0.06);
 }
 
-.quote-block::before {
-    content: '\201C';
-    display: block;
-    font-family: var(--font-titre);
-    font-size: 4rem;
-    color: var(--vert-clair);
-    line-height: 1;
-    margin-bottom: 0.5rem;
+.unique__list {
+    list-style: none;
+    padding-top: 10px;
 }
 
-.quote-block__text {
+.unique__item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 10px;
+    padding: 44px 0;
+    border-top: 1px solid rgba(97, 113, 58, 0.18);
+}
+
+.unique__item:last-child {
+    border-bottom: 1px solid rgba(97, 113, 58, 0.18);
+}
+
+.unique__num {
     font-family: var(--font-titre);
-    font-size: clamp(1.25rem, 2.4vw, 1.6rem);
     font-style: italic;
     font-weight: 300;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--corail);
 }
 
-.quote-block__author {
-    color: var(--gris-texte);
-    font-weight: 500;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
+.unique__item h3 {
+    font-family: var(--font-titre);
+    font-weight: 400;
+    font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+    margin-bottom: 0.8rem;
+}
+
+.unique__item p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    margin-bottom: 0;
+    max-width: 52ch;
+}
+
+/* Citation : grande typo, les mots apparaissent un à un */
+.quote-section {
+    position: relative;
+    overflow: hidden;
+    padding: 140px 0;
+}
+
+.quote {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.quote__mark {
+    display: block;
+    font-family: var(--font-titre);
+    font-size: 9rem;
+    line-height: 0.6;
+    height: 60px;
+    color: var(--saumon);
+    margin-bottom: 1.5rem;
+}
+
+.quote__text {
+    font-family: var(--font-titre);
+    font-weight: 300;
+    font-size: clamp(1.7rem, 3.6vw, 2.8rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--bordeaux);
+    margin: 0 0 2.5rem;
+}
+
+.quote__text em {
+    font-style: italic;
+    color: var(--corail);
+}
+
+.quote__text .mot {
+    display: inline-block;
+    opacity: 0.12;
+    filter: blur(3px);
+    transform: translateY(10px);
+    transition: opacity 0.8s var(--ease), filter 0.8s var(--ease), transform 0.8s var(--ease);
+    transition-delay: calc(var(--i) * 70ms);
+}
+
+.quote.visible .mot {
+    opacity: 1;
+    filter: none;
+    transform: none;
+}
+
+.quote__author {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--olive);
+}
+
+.quote__author::before,
+.quote__author::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
 }
 
 /* Section Engagement */
@@ -1817,6 +1858,165 @@ p {
     margin-bottom: 0.5rem;
 }
 
+/* --- Formulaire de devis --- */
+.devis__grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.devis__intro h2 {
+    margin-bottom: 1.2rem;
+}
+
+.devis__intro > p {
+    font-size: 1.05rem;
+}
+
+.devis__etapes {
+    list-style: none;
+    margin: 2.5rem 0;
+}
+
+.devis__etapes li {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 16px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(97, 113, 58, 0.18);
+    font-size: 0.95rem;
+    color: var(--gris-texte);
+}
+
+.devis__etapes li > span {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--corail);
+    color: var(--corail);
+    font-family: var(--font-titre);
+    font-style: italic;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.devis__etapes strong {
+    display: block;
+    color: var(--bordeaux);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.devis__direct {
+    font-size: 0.95rem;
+}
+
+.devis__direct a {
+    font-weight: 600;
+    border-bottom: 1px solid currentColor;
+}
+
+.devis__card {
+    background: var(--blanc);
+    border-radius: var(--radius-lg);
+    padding: 44px;
+    box-shadow: var(--ombre);
+}
+
+.devis fieldset {
+    border: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+.devis legend {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--noir);
+    margin-bottom: 12px;
+}
+
+.devis .form-group {
+    margin-bottom: 26px;
+}
+
+.devis .form-grid {
+    gap: 0 20px;
+}
+
+/* Choix en pastilles (radio) */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip {
+    position: relative;
+    cursor: pointer;
+}
+
+.chip input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.chip span {
+    display: inline-block;
+    padding: 11px 20px;
+    border: 1.5px solid var(--beige);
+    border-radius: 50px;
+    background: var(--papier);
+    font-size: 0.9rem;
+    color: var(--gris-texte);
+    transition: var(--transition);
+}
+
+.chips--small .chip span {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+}
+
+.chip:hover span {
+    border-color: var(--saumon);
+}
+
+.chip input:checked + span {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--blanc);
+}
+
+.chip input:focus-visible + span {
+    outline: 3px solid var(--corail);
+    outline-offset: 2px;
+}
+
+.chips.error .chip span {
+    border-color: #e74c3c;
+}
+
+.devis input,
+.devis textarea {
+    background: var(--papier);
+    border-color: var(--beige);
+}
+
+.devis input:focus,
+.devis textarea:focus {
+    background: var(--blanc);
+}
+
+.devis__submit {
+    width: 100%;
+    margin-top: 6px;
+}
+
 /* ============================================
    CONTACT
    ============================================ */
@@ -1884,88 +2084,81 @@ p {
     position: relative;
     background: var(--blanc);
     border-radius: var(--radius-lg);
-    padding: 35px;
+    padding: 40px;
+    margin-top: 110px !important;
     box-shadow: 0 8px 30px rgba(70, 38, 30, 0.05);
 }
 
-.delivery-truck {
+/* Camionnette : arrive une seule fois puis se gare sur la carte */
+.van {
     position: absolute;
-    bottom: calc(100% - 10px);
-    right: -150px;
-    animation: truck-drive 18s linear infinite;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.delivery-truck svg {
-    animation: truck-bounce 0.6s ease-in-out infinite;
-    position: relative;
-    z-index: 1;
-}
-
-.delivery-truck__smoke {
-    position: absolute;
-    left: 100%;
-    top: 42%;
-    width: 60px;
-    height: 30px;
-}
-
-.delivery-truck__smoke span {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--saumon);
+    bottom: calc(100% - 6px);
+    left: 30px;
+    width: 150px;
     opacity: 0;
-    animation: smoke-puff 1.8s ease-out infinite;
+    pointer-events: none;
+    z-index: 2;
 }
 
-.delivery-truck__smoke span:nth-child(2) {
-    animation-delay: 0.4s;
-    width: 8px;
-    height: 8px;
+.van svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
 }
 
-.delivery-truck__smoke span:nth-child(3) {
-    animation-delay: 0.8s;
-    width: 12px;
-    height: 12px;
+.van__roue {
+    transform-box: fill-box;
+    transform-origin: center;
 }
 
-.delivery-truck__smoke span:nth-child(4) {
-    animation-delay: 1.2s;
-    width: 7px;
-    height: 7px;
+.delivery-zone.visible .van {
+    animation: vanArrive 2.6s var(--ease) 0.3s forwards;
 }
 
-@keyframes smoke-puff {
-    0% {
-        opacity: 0.5;
-        transform: translate(0, 0) scale(0.5);
-        filter: blur(1px);
+.delivery-zone.visible .van__roue {
+    animation: roueTourne 0.45s linear 0.3s 5;
+}
+
+.delivery-zone.visible .van svg {
+    animation: vanFreine 0.6s ease-out 2.4s;
+}
+
+.van__fleurs {
+    transform-box: fill-box;
+    transform-origin: bottom center;
+}
+
+.delivery-zone.visible .van__fleurs {
+    animation: fleursBalance 1.2s ease-in-out 2.5s 2;
+}
+
+@keyframes vanArrive {
+    from { opacity: 0; left: -40px; }
+    15% { opacity: 1; }
+    to { opacity: 1; left: calc(100% - 190px); }
+}
+
+@keyframes roueTourne {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes vanFreine {
+    0%, 100% { transform: rotate(0); }
+    40% { transform: rotate(-2deg); }
+}
+
+@keyframes fleursBalance {
+    0%, 100% { transform: rotate(0); }
+    30% { transform: rotate(4deg); }
+    70% { transform: rotate(-3deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .delivery-zone.visible .van {
+        animation: none;
+        opacity: 1;
+        left: calc(100% - 190px);
     }
-    50% {
-        opacity: 0.3;
-        filter: blur(3px);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(40px, -20px) scale(2);
-        filter: blur(6px);
-    }
-}
-
-@keyframes truck-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
-}
-
-@keyframes truck-drive {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-100vw - 200px)); }
 }
 
 /* Zone de livraison - card */
@@ -2410,12 +2603,30 @@ p {
         margin: 1rem auto 2rem;
     }
 
+    .unique__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .unique__intro {
+        position: static;
+    }
+
     .fabrication {
         grid-template-columns: 1fr;
     }
 
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+
+    .devis__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .devis__card {
+        padding: 28px 22px;
     }
 
     .form-grid {
@@ -2497,22 +2708,8 @@ p {
     }
 
     .hero__visual {
-        width: min(80%, 340px);
-    }
-
-    .hero__badge {
-        left: -30px;
-        width: 110px;
-    }
-
-    .hero__gravure {
-        right: -40px;
-        width: 130px;
-    }
-
-    .hero__ballerine {
-        width: 70px;
-        right: -15px;
+        justify-self: center;
+        width: min(100%, 380px);
     }
 
     .hero-page::before,
@@ -2597,9 +2794,22 @@ p {
         grid-template-columns: 1fr;
     }
 
-    /* Quote */
-    .quote-block {
-        padding: 40px 25px;
+    .unique__item {
+        grid-template-columns: 56px 1fr;
+        padding: 32px 0;
+    }
+
+    .unique__num {
+        font-size: 2rem;
+    }
+
+    .quote-section {
+        padding: 90px 0;
+    }
+
+    .quote__mark {
+        font-size: 6rem;
+        height: 40px;
     }
 }
 

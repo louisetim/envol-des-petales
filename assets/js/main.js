@@ -66,6 +66,41 @@
         });
     }
 
+    /* --- CITATION : les mots apparaissent un à un --- */
+    document.querySelectorAll('[data-mots]').forEach(function(bloc) {
+        var i = 0;
+        Array.prototype.slice.call(bloc.childNodes).forEach(function(node) {
+            if (node.nodeType === 3) {
+                var frag = document.createDocumentFragment();
+                node.textContent.split(/(\s+)/).forEach(function(part) {
+                    if (!part) return;
+                    if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+                    var span = document.createElement('span');
+                    span.className = 'mot';
+                    span.style.setProperty('--i', i++);
+                    span.textContent = part;
+                    frag.appendChild(span);
+                });
+                bloc.replaceChild(frag, node);
+            } else if (node.nodeType === 1) {
+                node.classList.add('mot');
+                node.style.setProperty('--i', i++);
+            }
+        });
+        var figure = bloc.closest('.quote');
+        if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            figure.classList.add('visible');
+            return;
+        }
+        var obs = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting) {
+                figure.classList.add('visible');
+                obs.disconnect();
+            }
+        }, { threshold: 0.4 });
+        obs.observe(figure);
+    });
+
     /* --- VALIDATION DES FORMULAIRES --- */
 
     // Formulaire de devis (evenements.html)
@@ -111,7 +146,10 @@
             var value = field.value.trim();
             var fieldValid = true;
 
-            if (!value) {
+            if (field.type === 'radio') {
+                // Groupe de pastilles : au moins une doit être cochée
+                fieldValid = !!form.querySelector('input[name="' + field.name + '"]:checked');
+            } else if (!value) {
                 fieldValid = false;
             }
 
@@ -125,12 +163,12 @@
 
             if (!fieldValid) {
                 isValid = false;
-                field.classList.add('error');
+                (field.type === 'radio' ? field.closest('.chips') : field).classList.add('error');
                 // Trouver le message d'erreur associé
                 var errorId = 'error-' + (prefix ? prefix + '-' : '') + field.name;
                 // Essayer aussi sans prefix
                 var errorEl = document.getElementById(errorId) ||
-                              field.parentElement.querySelector('.form-error');
+                              (field.closest('.form-group') || field.parentElement).querySelector('.form-error');
                 if (errorEl) {
                     errorEl.classList.add('visible');
                 }
@@ -142,9 +180,12 @@
 
     // Retirer l'erreur quand l'utilisateur modifie un champ
     document.querySelectorAll('input, select, textarea').forEach(function(field) {
-        field.addEventListener('input', function() {
+        field.addEventListener(field.type === 'radio' ? 'change' : 'input', function() {
             this.classList.remove('error');
-            var errorEl = this.parentElement.querySelector('.form-error');
+            var group = this.closest('.form-group');
+            var chips = this.closest('.chips');
+            if (chips) chips.classList.remove('error');
+            var errorEl = group && group.querySelector('.form-error');
             if (errorEl) errorEl.classList.remove('visible');
         });
     });

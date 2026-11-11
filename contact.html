@@ -189,24 +189,28 @@
             <span class="decorative-line fade-in"></span>
 
             <div class="delivery-zone fade-in" style="max-width:800px;margin:0 auto;">
-                <!-- Camion animé -->
-                <div class="delivery-truck" aria-hidden="true">
-                    <div class="delivery-truck__smoke">
-                        <span></span><span></span><span></span><span></span>
-                    </div>
-                    <svg width="120" height="75" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="13" y="14" width="22" height="22" rx="4" fill="#B9484D"/>
-                        <rect x="16" y="18" width="12" height="10" rx="2" fill="#FFFFFF"/>
-                        <rect x="35" y="8" width="45" height="28" rx="4" fill="#D96A6C"/>
-                        <circle cx="50" cy="20" r="3" fill="#F4AFA8"/>
-                        <circle cx="58" cy="18" r="2.5" fill="#61713A"/>
-                        <circle cx="66" cy="21" r="3" fill="#EFD9CD"/>
-                        <circle cx="54" cy="26" r="2" fill="#B6B552"/>
-                        <circle cx="62" cy="25" r="2.5" fill="#F4AFA8"/>
-                        <circle cx="22" cy="38" r="6" fill="#443D3D"/>
-                        <circle cx="22" cy="38" r="3" fill="#F7EFE9"/>
-                        <circle cx="65" cy="38" r="6" fill="#443D3D"/>
-                        <circle cx="65" cy="38" r="3" fill="#F7EFE9"/>
+                <!-- Camionnette qui arrive et se gare -->
+                <div class="van" aria-hidden="true">
+                    <svg viewBox="0 0 170 90" width="170" height="90" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="85" cy="82" rx="74" ry="4" fill="#2A1F1C" opacity=".12"/>
+                        <!-- fleurs qui dépassent -->
+                        <g class="van__fleurs">
+                            <path d="M30 18 Q28 8 24 2M44 18 Q46 6 52 0M60 18 Q60 9 64 4M76 18 Q78 10 84 6" stroke="#61713A" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+                            <circle cx="24" cy="4" r="5" fill="#F4AFA8"/><circle cx="52" cy="3" r="6" fill="#D96A6C"/>
+                            <circle cx="64" cy="6" r="4" fill="#B6B552"/><circle cx="84" cy="7" r="5" fill="#F4AFA8"/>
+                            <ellipse cx="38" cy="10" rx="5" ry="2.5" fill="#61713A" transform="rotate(-30 38 10)"/>
+                            <ellipse cx="70" cy="12" rx="5" ry="2.5" fill="#B6B552" transform="rotate(25 70 12)"/>
+                        </g>
+                        <!-- caisse -->
+                        <rect x="8" y="16" width="100" height="54" rx="10" fill="#D96A6C"/>
+                        <rect x="8" y="54" width="100" height="5" fill="#F4AFA8"/>
+                        <g fill="#FBF6F2" transform="translate(58 37)"><ellipse cy="-7" rx="4" ry="6" transform="rotate(0)"/><ellipse cy="-7" rx="4" ry="6" transform="rotate(72)"/><ellipse cy="-7" rx="4" ry="6" transform="rotate(144)"/><ellipse cy="-7" rx="4" ry="6" transform="rotate(216)"/><ellipse cy="-7" rx="4" ry="6" transform="rotate(288)"/><circle r="3.5" fill="#B6B552"/></g>
+                        <!-- cabine -->
+                        <path d="M108 30h28q7 0 11 7l12 18q3 4 3 9v6h-54z" fill="#B9484D"/>
+                        <path d="M115 35h19q4 0 6 4l8 13h-33z" fill="#EFD9CD"/>
+                        <rect x="152" y="58" width="8" height="4" rx="2" fill="#F4AFA8"/>
+                        <g class="van__roue"><circle cx="36" cy="70" r="11" fill="#2A1F1C"/><circle cx="36" cy="70" r="5" fill="#EFD9CD"/><path d="M36 61v18M27 70h18" stroke="#EFD9CD" stroke-width="1.5"/></g>
+                        <g class="van__roue"><circle cx="132" cy="70" r="11" fill="#2A1F1C"/><circle cx="132" cy="70" r="5" fill="#EFD9CD"/><path d="M132 61v18M123 70h18" stroke="#EFD9CD" stroke-width="1.5"/></g>
                     </svg>
                 </div>
                 <h3 style="margin-bottom:1.5rem;">Communes desservies</h3>
