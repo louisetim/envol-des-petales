@@ -563,29 +563,41 @@ p {
     overflow: hidden;
 }
 
-/* Gravures botaniques dans les coins */
+/* Gravures botaniques dans les coins (une paire différente par page) */
 .hero-page::before,
 .hero-page::after {
     content: '';
     position: absolute;
-    bottom: -40px;
-    width: 170px;
-    height: 340px;
-    background: url("../images/gravures/brin.svg") no-repeat center / contain;
-    opacity: 0.45;
+    bottom: -20px;
+    width: 210px;
+    height: 300px;
+    background: no-repeat center bottom / contain;
+    opacity: 0.55;
     pointer-events: none;
 }
 
 .hero-page::before {
-    left: 4%;
-    transform: rotate(-12deg);
+    left: 3%;
+    background-image: url("../images/gravures/fleur1.webp");
+    transform: rotate(-8deg);
 }
 
 .hero-page::after {
-    right: 4%;
-    background-image: url("../images/gravures/fleur.svg");
-    transform: rotate(10deg);
+    right: 3%;
+    background-image: url("../images/gravures/fleur3.webp");
+    transform: rotate(6deg);
 }
+
+.hero-page--evenements::before { background-image: url("../images/gravures/fleur2.webp"); }
+.hero-page--evenements::after { background-image: url("../images/gravures/muguet.webp"); }
+.hero-page--bougies::before { background-image: url("../images/gravures/lilas.webp"); }
+.hero-page--bougies::after { background-image: url("../images/gravures/feuille.webp"); }
+.hero-page--apropos::before { background-image: url("../images/gravures/fleur5.webp"); }
+.hero-page--apropos::after { background-image: url("../images/gravures/fleur1.webp"); }
+.hero-page--contact::before { background-image: url("../images/gravures/muguet.webp"); }
+.hero-page--contact::after { background-image: url("../images/gravures/fleur3.webp"); }
+.hero-page--mentions::before { background-image: url("../images/gravures/feuille.webp"); }
+.hero-page--mentions::after { background-image: url("../images/gravures/fleur1.webp"); }
 
 .hero-page > .container {
     position: relative;
@@ -1111,10 +1123,26 @@ p {
 }
 
 .gravure--galerie {
-    top: 60px;
-    right: -30px;
-    width: 160px;
-    transform: rotate(-18deg) scaleX(-1);
+    top: 40px;
+    right: -60px;
+    width: 300px;
+    opacity: 0.45;
+    transform: rotate(-12deg);
+}
+
+/* Gravures de part et d'autre de la citation */
+.gravure--citation-g {
+    left: 2%;
+    bottom: 30px;
+    width: 190px;
+    transform: rotate(-10deg);
+}
+
+.gravure--citation-d {
+    right: 1%;
+    top: 50px;
+    width: 180px;
+    transform: rotate(8deg);
 }
 
 .gallery-section .container {
@@ -1611,6 +1639,7 @@ p {
 
 .quote {
     position: relative;
+    z-index: 1;
     max-width: 900px;
     margin: 0 auto;
     padding: 0 24px;
@@ -2714,9 +2743,9 @@ p {
 
     .hero-page::before,
     .hero-page::after {
-        width: 100px;
-        height: 200px;
-        opacity: 0.3;
+        width: 110px;
+        height: 170px;
+        opacity: 0.22;
     }
 
     .hero__buttons {
@@ -2805,6 +2834,12 @@ p {
 
     .quote-section {
         padding: 90px 0;
+    }
+
+    .gravure--citation-g,
+    .gravure--citation-d {
+        width: 100px;
+        opacity: 0.25;
     }
 
     .quote__mark {
