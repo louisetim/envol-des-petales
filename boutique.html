@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boutique L'Envol des Pétales - Bouquets et compositions florales artisanales pour toutes les occasions. Livraison en Seine-et-Marne.">
+    <title>Boutique - Bouquets & Compositions | L'Envol des Pétales</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo" aria-label="Accueil - L'Envol des Pétales">
+                <img src="assets/images/logo-edp-texte-seul.png" alt="L'Envol des Pétales" loading="lazy">
+            </a>
+            <nav class="nav" id="nav" aria-label="Navigation principale">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Accueil</a></li>
+                    <li><a href="boutique.html" class="nav__link active">Boutique</a></li>
+                    <li><a href="evenements.html" class="nav__link">Événements</a></li>
+                    <li><a href="bougies.html" class="nav__link">Bougies</a></li>
+                    <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav__cta">
+                <button class="cart-btn" id="cart-btn" aria-label="Voir le panier" title="Voir le panier">
+                    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count empty" id="cart-count">0</span>
+                </button>
+                <a href="contact.html" class="btn btn--primary btn--small">Commander</a>
+                <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO PAGE -->
+    <section class="hero-page">
+        <div class="petals-container" aria-hidden="true">
+            <div class="petal petal--rose"></div><div class="petal petal--bordeaux"></div><div class="petal petal--rose"></div>
+            <div class="petal petal--or"></div><div class="petal petal--rose"></div><div class="petal petal--bordeaux"></div>
+            <div class="petal petal--rose"></div><div class="petal petal--or"></div><div class="petal petal--rose"></div>
+            <div class="petal petal--bordeaux"></div>
+        </div>
+        <div class="container">
+            <h1 class="hero-page__title">Bouquets & Compositions</h1>
+            <p class="hero-page__subtitle">Chaque bouquet est une œuvre unique, composée à la main avec des fleurs de saison</p>
+        </div>
+    </section>
+
+    <!-- FILTRES & PRODUITS -->
+    <section class="section section--alt">
+        <div class="container">
+            <!-- Filtres par occasion -->
+            <div class="filters fade-in" id="filters" role="group" aria-label="Filtrer par occasion">
+                <button class="filter-btn active" data-filter="tous">Tous</button>
+                <button class="filter-btn" data-filter="anniversaire">Anniversaire</button>
+                <button class="filter-btn" data-filter="mariage">Mariage</button>
+                <button class="filter-btn" data-filter="deuil">Deuil</button>
+                <button class="filter-btn" data-filter="naissance">Naissance</button>
+                <button class="filter-btn" data-filter="juste-parce-que">Juste parce que</button>
+                <button class="filter-btn" data-filter="entreprise">Entreprise</button>
+            </div>
+
+            <!-- Grille de produits -->
+            <div class="products-grid" id="products-grid">
+
+                <!-- Produit 1 -->
+                <article class="product-card fade-in" data-category="anniversaire" data-id="1"
+                    data-name="Éclat de Bonheur" data-price="45" data-badge="Anniversaire"
+                    data-desc="Un bouquet lumineux de roses, pivoines et freesias dans des tons roses et pêche. Idéal pour célébrer un anniversaire avec éclat et tendresse."
+                    data-gradient="placeholder-img--bouquets">
+                    <div class="product-card__image">
+                        <span class="product-card__badge">Anniversaire</span>
+                        <img src="assets/images/eclat-bonheur.png" alt="Bouquet Éclat de Bonheur" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Éclat de Bonheur</h3>
+                        <p class="product-card__desc">Roses, pivoines et freesias dans des tons roses et pêche.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">45,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-cart" aria-label="Ajouter Éclat de Bonheur au panier">Commander</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produit 2 -->
+                <article class="product-card fade-in" data-category="mariage" data-id="2"
+                    data-name="Promesse Éternelle" data-price="85" data-badge="Mariage"
+                    data-desc="Composition élégante de roses blanches, lisianthus et gypsophile, ornée de rubans de soie ivoire. Le bouquet idéal pour accompagner vos vœux."
+                    data-gradient="placeholder-img--mariage">
+                    <div class="product-card__image">
+                        <span class="product-card__badge">Mariage</span>
+                        <img src="assets/images/promesse eternelle.png" alt="Bouquet Promesse Éternelle" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Promesse Éternelle</h3>
+                        <p class="product-card__desc">Roses blanches, lisianthus et gypsophile avec rubans de soie ivoire.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">85,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-cart" aria-label="Ajouter Promesse Éternelle au panier">Commander</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produit 3 -->
+                <article class="product-card fade-in" data-category="deuil" data-id="3"
+                    data-name="Mémoire Douce" data-price="55" data-badge="Deuil"
+                    data-desc="Une composition sobre et délicate de lys blancs, œillets et feuillage vert tendre. Un hommage tout en douceur pour accompagner le souvenir."
+                    data-gradient="placeholder-img--deuil">
+                    <div class="product-card__image">
+                        <span class="product-card__badge">Deuil</span>
+                        <img src="assets/images/memoire douce.png" alt="Bouquet Mémoire Douce" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Mémoire Douce</h3>
+                        <p class="product-card__desc">Lys blancs, œillets et feuillage vert tendre. Un hommage tout en douceur.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">55,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-cart" aria-label="Ajouter Mémoire Douce au panier">Commander</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produit 4 -->
+                <article class="product-card fade-in" data-category="naissance" data-id="4"
+                    data-name="Premiers Instants" data-price="40" data-badge="Naissance"
+                    data-desc="Bouquet tout en douceur de roses miniatures, camomille et eucalyptus. Couleurs pastel délicates pour célébrer l'arrivée d'un tout-petit."
+                    data-gradient="placeholder-img--naissance">
+                    <div class="product-card__image">
+                        <span class="product-card__badge">Naissance</span>
+                        <img src="assets/images/souffle de tendresse.png" alt="Bouquet Premiers Instants" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Premiers Instants</h3>
+                        <p class="product-card__desc">Roses miniatures, camomille et eucalyptus en tons pastel.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">40,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-cart" aria-label="Ajouter Premiers Instants au panier">Commander</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produit 5 -->
+                <article class="product-card fade-in" data-category="juste-parce-que" data-id="5"
+                    data-name="Souffle de Tendresse" data-price="35" data-badge="Juste parce que"
+                    data-desc="Un bouquet spontané et joyeux de fleurs des champs, renoncules et tulipes. Parce que les plus belles attentions n'ont pas besoin d'occasion."
+                    data-gradient="placeholder-img--bouquets">
+                    <div class="product-card__image">
+                        <span class="product-card__badge">Juste parce que</span>
+                        <img src="assets/images/souffle de tendresse.png" alt="Bouquet Souffle de Tendresse" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Souffle de Tendresse</h3>
+                        <p class="product-card__desc">Fleurs des champs, renoncules et tulipes pour une attention spontanée.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">35,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-cart" aria-label="Ajouter Souffle de Tendresse au panier">Commander</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produit 6 -->
+                <article class="product-card fade-in" data-category="entreprise" data-id="6"
+                    data-name="Élégance Professionnelle" data-price="65" data-badge="Entreprise"
+                    data-desc="Arrangement raffiné d'orchidées, roses et feuillage structuré. Parfait pour l'accueil de vos bureaux, un événement d'entreprise ou remercier un collaborateur."
+                    data-gradient="placeholder-img--evenements">
+                    <div class="product-card__image">
+                        <span class="product-card__badge">Entreprise</span>
+                        <img src="assets/images/elegance professionnelle.png" alt="Composition Élégance Professionnelle" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Élégance Professionnelle</h3>
+                        <p class="product-card__desc">Orchidées, roses et feuillage structuré pour un rendu raffiné.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">65,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-cart" aria-label="Ajouter Élégance Professionnelle au panier">Commander</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produit 7 -->
+                <article class="product-card fade-in" data-category="anniversaire" data-id="7"
+                    data-name="Jardin Secret" data-price="50" data-badge="Anniversaire"
+                    data-desc="Un bouquet généreux de dahlias, roses anciennes et astilbe dans des teintes bordeaux et rose poudré. Une ode à la beauté des jardins d'antan."
+                    data-gradient="placeholder-img--bougies">
+                    <div class="product-card__image">
+                        <span class="product-card__badge">Anniversaire</span>
+                        <img src="assets/images/jardin secret.png" alt="Bouquet Jardin Secret" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Jardin Secret</h3>
+                        <p class="product-card__desc">Dahlias, roses anciennes et astilbe en bordeaux et rose poudré.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">50,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-cart" aria-label="Ajouter Jardin Secret au panier">Commander</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produit 8 -->
+                <article class="product-card fade-in" data-category="juste-parce-que" data-id="8"
+                    data-name="Rayon de Soleil" data-price="38" data-badge="Juste parce que"
+                    data-desc="Un éclat de joie composé de tournesols, marguerites et craspedia. Ce bouquet lumineux apporte instantanément bonne humeur et chaleur."
+                    data-gradient="placeholder-img--evenements">
+                    <div class="product-card__image">
+                        <span class="product-card__badge">Juste parce que</span>
+                        <img src="assets/images/rayon de soleil.png" alt="Bouquet Rayon de Soleil" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Rayon de Soleil</h3>
+                        <p class="product-card__desc">Tournesols, marguerites et craspedia pour un éclat de joie.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">38,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-cart" aria-label="Ajouter Rayon de Soleil au panier">Commander</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produit 9 -->
+                <article class="product-card fade-in" data-category="mariage" data-id="9"
+                    data-name="Rêve de Soie" data-price="95" data-badge="Mariage"
+                    data-desc="Composition luxuriante de pivoines, roses David Austin et renoncules. Un bouquet de mariée d'exception qui incarne l'élégance et le romantisme."
+                    data-gradient="placeholder-img--mariage">
+                    <div class="product-card__image">
+                        <span class="product-card__badge">Mariage</span>
+                        <img src="assets/images/reve de soie.png" alt="Bouquet Rêve de Soie" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Rêve de Soie</h3>
+                        <p class="product-card__desc">Pivoines, roses David Austin et renoncules pour un mariage d'exception.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">95,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-cart" aria-label="Ajouter Rêve de Soie au panier">Commander</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Produit 10 -->
+                <article class="product-card fade-in" data-category="deuil" data-id="10"
+                    data-name="Apaisement" data-price="60" data-badge="Deuil"
+                    data-desc="Gerbe délicate de roses blanches et vertes, chrysanthèmes et feuillage sombre. Un dernier hommage plein de sérénité et de respect."
+                    data-gradient="placeholder-img--deuil">
+                    <div class="product-card__image">
+                        <span class="product-card__badge">Deuil</span>
+                        <img src="assets/images/apaisement.png" alt="Gerbe Apaisement" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Apaisement</h3>
+                        <p class="product-card__desc">Roses blanches, chrysanthèmes et feuillage sombre. Sérénité et respect.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">60,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-cart" aria-label="Ajouter Apaisement au panier">Commander</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BANDEAU SUR MESURE -->
+    <section class="section" style="text-align:center;">
+        <div class="container fade-in">
+            <h2>Vous ne trouvez pas votre bonheur ?</h2>
+            <span class="decorative-line"></span>
+            <p style="max-width:600px;margin:0 auto 2rem;font-size:1.1rem;">
+                Sandrine crée des compositions entièrement sur mesure. Décrivez-lui votre envie, l'occasion et votre budget, elle fera le reste.
+            </p>
+            <a href="contact.html" class="btn btn--primary">Demander une création sur mesure</a>
+        </div>
+    </section>
+
+    <!-- MODAL PRODUIT -->
+    <div class="modal-overlay" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal">
+            <button class="modal__close" id="modal-close" aria-label="Fermer">&times;</button>
+            <div class="modal__image" id="modal-image">
+                <div class="placeholder-img" id="modal-placeholder"></div>
+            </div>
+            <div class="modal__body">
+                <h3 class="modal__title" id="modal-title"></h3>
+                <span class="modal__badge" id="modal-badge"></span>
+                <p class="modal__desc" id="modal-desc"></p>
+                <p class="modal__price" id="modal-price"></p>
+                <div class="modal__actions">
+                    <button class="btn btn--primary" id="modal-add-cart">Ajouter au panier</button>
+                    <a href="contact.html" class="btn btn--secondary">Commander sur mesure</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="assets/images/logo-EDP-2025_RVB_logo-EDP-paysage-blanc.png" alt="L'Envol des Pétales">
+                    <p>Des fleurs pour chaque émotion. Fleuriste en Seine-et-Marne.</p>
+                    <div class="social-links mt-1">
+                        <a href="https://www.facebook.com/LENVOLDESPETALES" class="social-link" aria-label="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="https://www.instagram.com/lenvoldespetales/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="boutique.html">Boutique</a></li>
+                        <li><a href="evenements.html">Événements</a></li>
+                        <li><a href="bougies.html">Bougies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>En savoir plus</h4>
+                    <ul class="footer__links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer__links">
+                        <li><a href="mailto:contact@lenvoldespetales.fr">contact@lenvoldespetales.fr</a></li>
+                        <li><a href="tel:+33659080283">06 59 08 02 83</a></li>
+                        <li>Serris / Roissy-en-Brie (77)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 L'Envol des P&eacute;tales &ndash; Sandrine Giraudot. Tous droits r&eacute;serv&eacute;s. <a href="mentions-legales.html">Mentions l&eacute;gales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Panier -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Panier">
+        <div class="cart-drawer__header">
+            <h3>Votre panier</h3>
+            <button class="cart-drawer__close" id="cart-close" aria-label="Fermer le panier">&times;</button>
+        </div>
+        <div class="cart-drawer__items" id="cart-items">
+            <div class="cart-empty" id="cart-empty">
+                <p>Votre panier est vide</p>
+            </div>
+        </div>
+        <div class="cart-drawer__footer" id="cart-footer" style="display:none;">
+            <div class="cart-drawer__total">
+                <span>Total</span>
+                <span id="cart-total">0,00 &euro;</span>
+            </div>
+            <a href="contact.html" class="btn btn--primary">Finaliser la commande</a>
+            <p class="cart-drawer__note">La commande sera finalisée par message avec Sandrine</p>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script src="assets/js/panier.js"></script>
+    <script src="assets/js/boutique.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

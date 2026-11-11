@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bougies artisanales parfumées par L'Envol des Pétales. Coulées à la main par Sandrine, fleuriste en Seine-et-Marne.">
+    <title>Bougies Artisanales | L'Envol des Pétales</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo" aria-label="Accueil">
+                <img src="assets/images/logo-edp-texte-seul.png" alt="L'Envol des Pétales" loading="lazy">
+            </a>
+            <nav class="nav" id="nav" aria-label="Navigation principale">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Accueil</a></li>
+                    <li><a href="boutique.html" class="nav__link">Boutique</a></li>
+                    <li><a href="evenements.html" class="nav__link">Événements</a></li>
+                    <li><a href="bougies.html" class="nav__link active">Bougies</a></li>
+                    <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav__cta">
+                <button class="cart-btn" id="cart-btn" aria-label="Voir le panier" title="Voir le panier">
+                    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count empty" id="cart-count">0</span>
+                </button>
+                <a href="contact.html" class="btn btn--primary btn--small">Commander</a>
+                <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-page">
+        <div class="petals-container" aria-hidden="true">
+            <div class="petal petal--rose"></div><div class="petal petal--bordeaux"></div><div class="petal petal--rose"></div>
+            <div class="petal petal--or"></div><div class="petal petal--rose"></div><div class="petal petal--bordeaux"></div>
+            <div class="petal petal--rose"></div><div class="petal petal--or"></div><div class="petal petal--rose"></div>
+            <div class="petal petal--bordeaux"></div>
+        </div>
+        <div class="container">
+            <h1 class="hero-page__title">Bougies Artisanales</h1>
+            <p class="hero-page__subtitle">Coulées à la main par Sandrine, pour prolonger la magie des fleurs</p>
+        </div>
+    </section>
+
+    <!-- CATALOGUE BOUGIES -->
+    <section class="section section--alt">
+        <div class="container">
+            <h2 class="section-title fade-in">Nos bougies</h2>
+            <p class="section-subtitle fade-in">Des parfums qui racontent une histoire</p>
+            <span class="decorative-line fade-in"></span>
+
+            <div class="candles-grid">
+
+                <!-- Bougie 1 -->
+                <article class="candle-card fade-in" data-id="b1" data-name="Cœur de Pivoine" data-price="22">
+                    <div class="candle-card__image">
+                        <img src="assets/images/temporary-candle.png" alt="Bougie Cœur de Pivoine">
+                    </div>
+                    <div class="candle-card__body">
+                        <h3 class="candle-card__title">Cœur de Pivoine</h3>
+                        <p class="candle-card__desc">Un parfum délicat de pivoine fraîche et de rose, avec une pointe de musc blanc. La douceur incarnée.</p>
+                        <div class="candle-card__details">
+                            <span class="candle-card__detail">Pivoine & Rose</span>
+                            <span class="candle-card__detail">180g</span>
+                            <span class="candle-card__detail">~40h</span>
+                        </div>
+                        <div class="candle-card__footer">
+                            <span class="candle-card__price">22,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-candle" aria-label="Ajouter Cœur de Pivoine au panier">Ajouter</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bougie 2 -->
+                <article class="candle-card fade-in" data-id="b2" data-name="Nuit Florale" data-price="25">
+                    <div class="candle-card__image">
+                        <img src="assets/images/temporary-candle.png" alt="Bougie Nuit Florale">
+                    </div>
+                    <div class="candle-card__body">
+                        <h3 class="candle-card__title">Nuit Florale</h3>
+                        <p class="candle-card__desc">Un mélange enivrant de jasmin, tubéreuse et bois de santal. Parfaite pour les soirées cocooning.</p>
+                        <div class="candle-card__details">
+                            <span class="candle-card__detail">Jasmin & Santal</span>
+                            <span class="candle-card__detail">200g</span>
+                            <span class="candle-card__detail">~45h</span>
+                        </div>
+                        <div class="candle-card__footer">
+                            <span class="candle-card__price">25,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-candle" aria-label="Ajouter Nuit Florale au panier">Ajouter</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bougie 3 -->
+                <article class="candle-card fade-in" data-id="b3" data-name="Jardin d'Aurore" data-price="20">
+                    <div class="candle-card__image">
+                        <img src="assets/images/temporary-candle.png" alt="Bougie Jardin d'Aurore">
+                    </div>
+                    <div class="candle-card__body">
+                        <h3 class="candle-card__title">Jardin d'Aurore</h3>
+                        <p class="candle-card__desc">La fraîcheur d'un matin de printemps : herbe coupée, freesia et rosée. Vivifiante et apaisante.</p>
+                        <div class="candle-card__details">
+                            <span class="candle-card__detail">Freesia & Herbe</span>
+                            <span class="candle-card__detail">150g</span>
+                            <span class="candle-card__detail">~35h</span>
+                        </div>
+                        <div class="candle-card__footer">
+                            <span class="candle-card__price">20,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-candle" aria-label="Ajouter Jardin d'Aurore au panier">Ajouter</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bougie 4 -->
+                <article class="candle-card fade-in" data-id="b4" data-name="Caresse d'Été" data-price="22">
+                    <div class="candle-card__image">
+                        <img src="assets/images/temporary-candle.png" alt="Bougie Caresse d'Été">
+                    </div>
+                    <div class="candle-card__body">
+                        <h3 class="candle-card__title">Caresse d'Été</h3>
+                        <p class="candle-card__desc">Lavande, fleur d'oranger et miel. Un voyage olfactif dans les champs de Provence en plein été.</p>
+                        <div class="candle-card__details">
+                            <span class="candle-card__detail">Lavande & Miel</span>
+                            <span class="candle-card__detail">180g</span>
+                            <span class="candle-card__detail">~40h</span>
+                        </div>
+                        <div class="candle-card__footer">
+                            <span class="candle-card__price">22,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-candle" aria-label="Ajouter Caresse d'Été au panier">Ajouter</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bougie 5 -->
+                <article class="candle-card fade-in" data-id="b5" data-name="Brume de Rose" data-price="28">
+                    <div class="candle-card__image">
+                        <img src="assets/images/temporary-candle.png" alt="Bougie Brume de Rose">
+                    </div>
+                    <div class="candle-card__body">
+                        <h3 class="candle-card__title">Brume de Rose</h3>
+                        <p class="candle-card__desc">Rose de Damas, pêche blanche et voile de vanille. Notre best-seller, un parfum aussi élégant que réconfortant.</p>
+                        <div class="candle-card__details">
+                            <span class="candle-card__detail">Rose & Vanille</span>
+                            <span class="candle-card__detail">220g</span>
+                            <span class="candle-card__detail">~50h</span>
+                        </div>
+                        <div class="candle-card__footer">
+                            <span class="candle-card__price">28,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-candle" aria-label="Ajouter Brume de Rose au panier">Ajouter</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bougie 6 -->
+                <article class="candle-card fade-in" data-id="b6" data-name="Forêt Enchantée" data-price="24">
+                    <div class="candle-card__image">
+                        <img src="assets/images/temporary-candle.png" alt="Bougie Forêt Enchantée">
+                    </div>
+                    <div class="candle-card__body">
+                        <h3 class="candle-card__title">Forêt Enchantée</h3>
+                        <p class="candle-card__desc">Cèdre, mousse de chêne et violette sauvage. Un voyage au cœur d'une forêt après la pluie.</p>
+                        <div class="candle-card__details">
+                            <span class="candle-card__detail">Cèdre & Violette</span>
+                            <span class="candle-card__detail">200g</span>
+                            <span class="candle-card__detail">~45h</span>
+                        </div>
+                        <div class="candle-card__footer">
+                            <span class="candle-card__price">24,00 &euro;</span>
+                            <button class="btn btn--primary btn--small btn-add-candle" aria-label="Ajouter Forêt Enchantée au panier">Ajouter</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMENT SONT-ELLES FABRIQUÉES -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Comment sont-elles fabriquées ?</h2>
+            <p class="section-subtitle fade-in">Un savoir-faire artisanal, du cœur dans chaque bougie</p>
+            <span class="decorative-line fade-in"></span>
+
+            <div class="fabrication">
+                <div class="fabrication__image fade-in-left">
+                    <img src="assets/images/temporary-candle.png" alt="Sandrine fabriquant une bougie">
+                </div>
+                <div class="fabrication__steps fade-in-right">
+                    <div class="fabrication__step">
+                        <h4>Cire naturelle de soja</h4>
+                        <p>Sandrine utilise exclusivement de la cire de soja 100% végétale, sans OGM, pour une combustion propre et longue durée.</p>
+                    </div>
+                    <div class="fabrication__step">
+                        <h4>Parfums de Grasse</h4>
+                        <p>Les fragrances sont soigneusement sélectionnées auprès de parfumeurs de Grasse, capitale mondiale du parfum.</p>
+                    </div>
+                    <div class="fabrication__step">
+                        <h4>Coulée à la main</h4>
+                        <p>Chaque bougie est coulée individuellement à la main dans l'atelier de Sandrine, pour un résultat unique et soigné.</p>
+                    </div>
+                    <div class="fabrication__step">
+                        <h4>Contenants recyclés</h4>
+                        <p>Les pots sont sélectionnés pour leur esthétique et peuvent être recyclés ou réutilisés. Éco-responsabilité avant tout.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="assets/images/logo-EDP-2025_RVB_logo-EDP-paysage-blanc.png" alt="L'Envol des Pétales">
+                    <p>Des fleurs pour chaque émotion. Fleuriste en Seine-et-Marne.</p>
+                    <div class="social-links mt-1">
+                        <a href="https://www.facebook.com/LENVOLDESPETALES" class="social-link" aria-label="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="https://www.instagram.com/lenvoldespetales/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="boutique.html">Boutique</a></li>
+                        <li><a href="evenements.html">Événements</a></li>
+                        <li><a href="bougies.html">Bougies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>En savoir plus</h4>
+                    <ul class="footer__links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer__links">
+                        <li><a href="mailto:contact@lenvoldespetales.fr">contact@lenvoldespetales.fr</a></li>
+                        <li><a href="tel:+33659080283">06 59 08 02 83</a></li>
+                        <li>Serris / Roissy-en-Brie (77)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 L'Envol des P&eacute;tales &ndash; Sandrine Giraudot. Tous droits r&eacute;serv&eacute;s. <a href="mentions-legales.html">Mentions l&eacute;gales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Panier -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Panier">
+        <div class="cart-drawer__header">
+            <h3>Votre panier</h3>
+            <button class="cart-drawer__close" id="cart-close" aria-label="Fermer le panier">&times;</button>
+        </div>
+        <div class="cart-drawer__items" id="cart-items">
+            <div class="cart-empty" id="cart-empty"><p>Votre panier est vide</p></div>
+        </div>
+        <div class="cart-drawer__footer" id="cart-footer" style="display:none;">
+            <div class="cart-drawer__total"><span>Total</span><span id="cart-total">0,00 &euro;</span></div>
+            <a href="contact.html" class="btn btn--primary">Finaliser la commande</a>
+            <p class="cart-drawer__note">La commande sera finalisée par message avec Sandrine</p>
+        </div>
+    </aside>
+
+    <script src="assets/js/panier.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        /* --- Ajout au panier pour les bougies --- */
+        document.querySelectorAll('.btn-add-candle').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var card = this.closest('.candle-card');
+                var item = {
+                    id: card.dataset.id,
+                    name: card.dataset.name,
+                    price: parseFloat(card.dataset.price),
+                    qty: 1
+                };
+                Panier.addItem(item);
+            });
+        });
+    </script>
+</body>
+</html>

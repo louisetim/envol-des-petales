@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Décoration florale pour événements - Mariages, baptêmes, anniversaires. Sandrine vous accompagne de A à Z en Seine-et-Marne.">
+    <title>Événements - Décoration florale | L'Envol des Pétales</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo" aria-label="Accueil">
+                <img src="assets/images/logo-edp-texte-seul.png" alt="L'Envol des Pétales" loading="lazy">
+            </a>
+            <nav class="nav" id="nav" aria-label="Navigation principale">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Accueil</a></li>
+                    <li><a href="boutique.html" class="nav__link">Boutique</a></li>
+                    <li><a href="evenements.html" class="nav__link active">Événements</a></li>
+                    <li><a href="bougies.html" class="nav__link">Bougies</a></li>
+                    <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav__cta">
+                <button class="cart-btn" id="cart-btn" aria-label="Voir le panier" title="Voir le panier">
+                    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count empty" id="cart-count">0</span>
+                </button>
+                <a href="contact.html" class="btn btn--primary btn--small">Commander</a>
+                <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-page">
+        <div class="petals-container" aria-hidden="true">
+            <div class="petal petal--rose"></div><div class="petal petal--bordeaux"></div><div class="petal petal--rose"></div>
+            <div class="petal petal--or"></div><div class="petal petal--rose"></div><div class="petal petal--bordeaux"></div>
+            <div class="petal petal--rose"></div><div class="petal petal--or"></div><div class="petal petal--rose"></div>
+            <div class="petal petal--bordeaux"></div>
+        </div>
+        <div class="container">
+            <h1 class="hero-page__title">Événements</h1>
+            <p class="hero-page__subtitle">Chaque événement est unique, Sandrine vous accompagne de A à Z</p>
+        </div>
+    </section>
+
+    <!-- TYPES D'ÉVÉNEMENTS -->
+    <section class="section section--alt">
+        <div class="container">
+            <h2 class="section-title fade-in">Quel est votre événement ?</h2>
+            <p class="section-subtitle fade-in">Des fleurs qui subliment chaque instant</p>
+            <span class="decorative-line fade-in"></span>
+
+            <div class="event-types">
+                <!-- Mariage -->
+                <div class="event-type-card fade-in">
+                    <div class="event-type-card__image">
+                        <img src="assets/images/promesse eternelle.png" alt="Bouquet de mariage - Promesse éternelle" loading="lazy">
+                    </div>
+                    <div class="event-type-card__body">
+                        <h3 class="event-type-card__title">Mariages</h3>
+                        <p class="event-type-card__text">Bouquet de mariée, boutonnière, centre de table, arche florale... Sandrine crée l'univers floral de votre plus beau jour.</p>
+                    </div>
+                </div>
+
+                <!-- Baptêmes -->
+                <div class="event-type-card fade-in">
+                    <div class="event-type-card__image">
+                        <img src="assets/images/souffle de tendresse.png" alt="Bouquet naissance - Souffle de tendresse" loading="lazy">
+                    </div>
+                    <div class="event-type-card__body">
+                        <h3 class="event-type-card__title">Baptêmes & Naissances</h3>
+                        <p class="event-type-card__text">Des compositions tendres et délicates pour célébrer l'arrivée ou le baptême de votre enfant.</p>
+                    </div>
+                </div>
+
+                <!-- Anniversaires -->
+                <div class="event-type-card fade-in">
+                    <div class="event-type-card__image">
+                        <img src="assets/images/eclat-bonheur.png" alt="Bouquet anniversaire - Éclat de bonheur" loading="lazy">
+                    </div>
+                    <div class="event-type-card__body">
+                        <h3 class="event-type-card__title">Anniversaires</h3>
+                        <p class="event-type-card__text">Des décorations florales joyeuses et colorées pour fêter comme il se doit chaque année qui passe.</p>
+                    </div>
+                </div>
+
+                <!-- Deuil -->
+                <div class="event-type-card fade-in">
+                    <div class="event-type-card__image">
+                        <img src="assets/images/memoire douce.png" alt="Composition de deuil - Mémoire douce" loading="lazy">
+                    </div>
+                    <div class="event-type-card__body">
+                        <h3 class="event-type-card__title">Deuil</h3>
+                        <p class="event-type-card__text">Gerbes, couronnes et compositions avec respect et délicatesse pour rendre un dernier hommage.</p>
+                    </div>
+                </div>
+
+                <!-- Pro -->
+                <div class="event-type-card fade-in">
+                    <div class="event-type-card__image">
+                        <img src="assets/images/elegance professionnelle.png" alt="Bouquet professionnel - Élégance professionnelle" loading="lazy">
+                    </div>
+                    <div class="event-type-card__body">
+                        <h3 class="event-type-card__title">Pro & Séminaires</h3>
+                        <p class="event-type-card__text">Décorations florales pour vos événements d'entreprise, séminaires, inaugurations et réceptions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE PHOTOS -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Nos réalisations</h2>
+            <p class="section-subtitle fade-in">Quelques créations qui ont fait briller les yeux</p>
+            <span class="decorative-line fade-in"></span>
+
+            <div class="realisations-layout fade-in">
+                <!-- Slideshow à gauche -->
+                <div class="realisations-slideshow">
+                    <div class="slideshow-track">
+                        <img src="assets/images/table mariage.JPG" alt="Cliquez sur une photo pour l'agrandir" class="slideshow-display">
+                    </div>
+                    <div class="slideshow-controls">
+                        <button class="slideshow-btn slideshow-btn--prev" aria-label="Photo précédente">&#8249;</button>
+                        <button class="slideshow-btn slideshow-btn--next" aria-label="Photo suivante">&#8250;</button>
+                    </div>
+                </div>
+
+                <!-- Mosaïque à droite -->
+                <div class="realisations-mosaic">
+                    <div class="mosaic-item active"><img src="assets/images/table mariage.JPG" alt="Décoration de table mariage" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/arche-evenement.JPG" alt="Arche florale événement" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/deco-voiture-mariage.JPG" alt="Décoration voiture mariage" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/mariage-boheme.JPG" alt="Mariage bohème" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/mariage-boheme2.JPG" alt="Mariage bohème détails" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/bouquet2.jpg" alt="Bouquet de fleurs" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/bar-mitzvah.JPG" alt="Décoration florale bar-mitzvah" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/preparation vases.JPG" alt="Préparation des vases" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/ambiance-bouquet-fleurs-roses.png" alt="Bouquet de fleurs roses" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/compo pour mairie.JPG" alt="Composition pour mairie" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/shooting-exotique.JPG" alt="Shooting exotique" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/bouquet4.JPG" alt="Bouquet coloré" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/bouquet5.JPG" alt="Bouquet élégant" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/bouquet1.jpg" alt="Bouquet classique" loading="lazy"></div>
+                    <div class="mosaic-item"><img src="assets/images/joli-visuel-lys-dans-un-vase.jpg" alt="Lys dans un vase" loading="lazy"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMESSE -->
+    <section class="engagement-section fade-in">
+        <div class="engagement-photo">
+            <img src="assets/images/sandrine-mariage-escabeau.jpg" alt="Sandrine en pleine installation florale pour un mariage" loading="lazy">
+        </div>
+        <div class="engagement-card">
+            <span class="engagement-guillemet">"</span>
+            <h2>L'engagement de Sandrine</h2>
+            <span class="decorative-line" style="margin-left:0;"></span>
+            <p class="engagement-text">
+                Chaque événement mérite une attention particulière. Je prends le temps de vous écouter,
+                de comprendre votre univers et vos envies pour créer des décorations florales qui vous ressemblent.
+                Du premier échange à l'installation le jour J, je suis à vos côtés.
+            </p>
+            <p class="engagement-author">— Sandrine</p>
+        </div>
+    </section>
+
+    <!-- FORMULAIRE DEVIS -->
+    <section class="section" id="devis">
+        <div class="container">
+            <h2 class="section-title fade-in">Demander un devis gratuit</h2>
+            <p class="section-subtitle fade-in">Décrivez votre événement, Sandrine reviendra vers vous sous 48h</p>
+            <span class="decorative-line fade-in"></span>
+
+            <div class="form-section fade-in">
+                <form id="form-devis" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="devis-nom">Votre nom *</label>
+                            <input type="text" id="devis-nom" name="nom" required placeholder="Marie Dupont">
+                            <p class="form-error" id="error-nom">Merci de renseigner votre nom</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="devis-email">Votre email *</label>
+                            <input type="email" id="devis-email" name="email" required placeholder="marie@exemple.fr">
+                            <p class="form-error" id="error-email">Merci de renseigner un email valide</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="devis-tel">Téléphone</label>
+                            <input type="tel" id="devis-tel" name="tel" placeholder="06 12 34 56 78">
+                        </div>
+                        <div class="form-group">
+                            <label for="devis-type">Type d'événement *</label>
+                            <select id="devis-type" name="type" required>
+                                <option value="">-- Choisissez --</option>
+                                <option value="mariage">Mariage</option>
+                                <option value="bapteme">Baptême / Naissance</option>
+                                <option value="anniversaire">Anniversaire</option>
+                                <option value="deuil">Deuil</option>
+                                <option value="entreprise">Événement professionnel</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                            <p class="form-error" id="error-type">Merci de choisir un type d'événement</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="devis-date">Date souhaitée</label>
+                            <input type="date" id="devis-date" name="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="devis-budget">Budget estimatif</label>
+                            <select id="devis-budget" name="budget">
+                                <option value="">-- Indiquez votre budget --</option>
+                                <option value="moins-200">Moins de 200 &euro;</option>
+                                <option value="200-500">200 &euro; - 500 &euro;</option>
+                                <option value="500-1000">500 &euro; - 1 000 &euro;</option>
+                                <option value="plus-1000">Plus de 1 000 &euro;</option>
+                                <option value="ne-sait-pas">Je ne sais pas encore</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-group--full">
+                            <label for="devis-message">Décrivez votre projet *</label>
+                            <textarea id="devis-message" name="message" required placeholder="Décrivez votre événement, le lieu, le nombre d'invités, vos envies en termes de couleurs et de fleurs..."></textarea>
+                            <p class="form-error" id="error-message">Merci de décrire votre projet</p>
+                        </div>
+                    </div>
+                    <div style="text-align:center;margin-top:1rem;">
+                        <button type="submit" class="btn btn--primary">Envoyer ma demande de devis</button>
+                    </div>
+                </form>
+
+                <div class="form-success" id="form-success-devis">
+                    <h3>Merci pour votre demande !</h3>
+                    <p>Sandrine a bien reçu votre demande de devis et reviendra vers vous dans les 48 heures. À très bientôt !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="assets/images/logo-EDP-2025_RVB_logo-EDP-paysage-blanc.png" alt="L'Envol des Pétales">
+                    <p>Des fleurs pour chaque émotion. Fleuriste en Seine-et-Marne.</p>
+                    <div class="social-links mt-1">
+                        <a href="https://www.facebook.com/LENVOLDESPETALES" class="social-link" aria-label="Facebook" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="https://www.instagram.com/lenvoldespetales/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="boutique.html">Boutique</a></li>
+                        <li><a href="evenements.html">Événements</a></li>
+                        <li><a href="bougies.html">Bougies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>En savoir plus</h4>
+                    <ul class="footer__links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer__links">
+                        <li><a href="mailto:contact@lenvoldespetales.fr">contact@lenvoldespetales.fr</a></li>
+                        <li><a href="tel:+33659080283">06 59 08 02 83</a></li>
+                        <li>Serris / Roissy-en-Brie (77)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 L'Envol des P&eacute;tales &ndash; Sandrine Giraudot. Tous droits r&eacute;serv&eacute;s. <a href="mentions-legales.html">Mentions l&eacute;gales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Panier -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Panier">
+        <div class="cart-drawer__header">
+            <h3>Votre panier</h3>
+            <button class="cart-drawer__close" id="cart-close" aria-label="Fermer le panier">&times;</button>
+        </div>
+        <div class="cart-drawer__items" id="cart-items">
+            <div class="cart-empty" id="cart-empty"><p>Votre panier est vide</p></div>
+        </div>
+        <div class="cart-drawer__footer" id="cart-footer" style="display:none;">
+            <div class="cart-drawer__total"><span>Total</span><span id="cart-total">0,00 &euro;</span></div>
+            <a href="contact.html" class="btn btn--primary">Finaliser la commande</a>
+            <p class="cart-drawer__note">La commande sera finalisée par message avec Sandrine</p>
+        </div>
+    </aside>
+
+    <script src="assets/js/panier.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
